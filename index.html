@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Matheus & Thaíssa — Nosso Casamento</title>
+
+    <!-- Tailwind (apenas utilitários de layout) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400..900&family=Lora:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-body">
+
+    <audio id="tickTickSound" src="tiktak.mp3" loop></audio>
+
+    <script>
+        // Função para reproduzir o som
+        function playTick() {
+            const sound = document.getElementById('tickTickSound');
+            sound.play();
+        }
+
+        // Configura um intervalo para reproduzir o som a cada segundo, por exemplo
+        setInterval(playTick, 1000); // 1000 milissegundos = 1 segundo
+    </script>
+
+    <!-- Logo -->
+    <div class="logo-top-left">
+        <img src="Logo.png" alt="Logo do casamento Matheus e Thaíssa">
+    </div>
+
+    <!-- Botões superiores -->
+    <nav class="top-buttons" aria-label="Navegação principal">
+        <a href="presente.html" target="_blank" class="btn-superior">Presentes</a>
+        <a href="confirmacao.html" target="_blank" class="btn-superior">Confirmar presença</a>
+        <a href="local.html" target="_blank" class="btn-superior">Local</a>
+    </nav>
+
+    <!-- Faixa branca superior -->
+    <div class="clean-space top"></div>
+
+    <!-- Hero -->
+    <div class="background-wrapper fade-in">
+        <main class="text-center px-4">
+            <p class="font-serif-display text-2xl md:text-3xl mb-6">
+                Bem-vindo ao nosso casamento
+            </p>
+
+            <h1 class="font-script text-7xl md:text-9xl leading-tight mb-6">
+                Matheus & Thaíssa
+            </h1>
+
+            <a href="confirmacao.html" target="_blank" class="btn-principal inline-block">
+                Confirmar Presença
+            </a>
+        </main>
+    </div>
+
+    <!-- Faixa branca inferior -->
+    <div class="clean-space bottom"></div>
+
+    <!-- Informações -->
+    <section class="info-clean">
+        <div class="info-grid">
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i data-lucide="calendar"></i>
+                </div>
+                <h3>Data</h3>
+                <p>Sábado, 12 de Abril de 2026</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h3>Horário</h3>
+                <p>Cerimônia às 15:45</p>
+                <p>Recepção em seguida</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i data-lucide="map-pin"></i>
+                </div>
+                <h3>Local</h3>
+                <p>Espaço Celebrare</p>
+                <p>Rua Luiz Beltrão, 714</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+        <h2>Contagem Regressiva</h2>
+
+        <div class="countdown-container">
+            <div class="count-item">
+                <span id="days">00</span>
+                <small>Dias</small>
+            </div>
+            <div class="count-item">
+                <span id="hours">00</span>
+                <small>Horas</small>
+            </div>
+            <div class="count-item">
+                <span id="minutes">00</span>
+                <small>Min</small>
+            </div>
+            <div class="count-item">
+                <span id="seconds">00</span>
+                <small>Seg</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script src="Cronometro.js" defer></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

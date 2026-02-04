@@ -1,0 +1,403 @@
+/* =========================
+   RESET BÁSICO
+   ========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* =========================
+   FONTES
+   ========================= */
+.font-script {
+    font-family: 'Great Vibes', cursive;
+}
+
+.font-serif-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+    font-family: 'Lora', serif;
+}
+
+.font-rounded {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* =========================
+   BODY
+   ========================= */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Lora', serif;
+    background-color: #a047d7;
+}
+
+/* =========================
+   ESTRUTURA PRINCIPAL
+   ========================= */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   TEXTOS
+   ========================= */
+p {
+    color: #bf94d9;
+}
+
+h1 {
+    color: #a047d7;
+    font-size: 48px;
+    margin: 60px 0 20px;
+}
+
+h2 {
+    align-items: center;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    font-size: 48px;
+    margin: 60px 0 20px;
+}
+
+h4 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #ffffff;
+    font-size: 200px;
+}
+
+.conf-color {
+    background-color: #c7aada;
+}
+
+.input-elegante {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    outline: none;
+}
+
+.input-elegante:focus {
+    border-color: #a047d7;
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+.top-buttons {
+    position: fixed;
+    top: 7px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    z-index: 1000;
+}
+
+.btn-superior {
+    background-color: #ffffff;
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
+    color: #54465c;
+    padding: 7px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-superior:hover {
+    color: #a047d7;
+}
+
+.btn-principal {
+    font-size: 23px;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: #ffffff;
+    color: #a047d7;
+    cursor: pointer;
+    border: 2px solid #bf94d9;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #a047d7;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FAIXAS BRANCAS
+   ========================= */
+.clean-space {
+    height: 50px;
+    background-color: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.clean-space.top::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+.clean-space.bottom::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+/* =========================
+   BACKGROUND CENTRAL
+   ========================= */
+.background-wrapper {
+    min-height: calc(100vh - 100px);
+    width: 100%;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1)),
+        url("MT.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================
+   INFO CLEAN (BRANCO)
+   ========================= */
+.info-clean {
+    background-color: #ffffff;
+    padding: 100px 20px;
+}
+
+.info-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    text-align: center;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-icon {
+    width: 75px;
+    height: 75px;
+    background-color: #efe4fb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #191819;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 17px;
+    color: #2f2e2e;
+    margin: 3px 0;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.08);
+    transition: 0.3s ease;
+}
+
+.form-container {
+    width: 80vw;
+    height: 700px; /* Altura fixa que você já definiu */
+    max-width: 1200px;
+    margin: auto;
+    position: absolute;
+    top: 60%; /* Ajuste o top para descer um pouco mais */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2); /* Mantém o centralizado e aumenta o conteúdo */
+    overflow: hidden; /* Evita rolagem */
+}
+
+.form-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+
+
+
+/* =========================
+   LOGO
+   ========================= */
+.logo-top-left {
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.logo-top-left img {
+    height: 175px;
+    width: auto;
+}
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+.countdown-section {
+    background-color: #a047d7;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.countdown-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.count-item span {
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+}
+
+.count-item small {
+    margin-top: 8px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f3e9fb;
+    display: block;
+}
+
+/* =========================
+   ANIMAÇÕES
+   ========================= */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-icon {
+    width: 94px;
+    height: 94px;
+    background-color: #efe4fb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info-icon svg {
+    width: 52px;
+    height: 52px;
+    stroke: #a047d7;
+    stroke-width: 1.8;
+}
+
+
+/* Estilo para o container do mapa */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 655px;
+    border: 0;
+}
+
+.titulo-local {
+    font-family: 'Great Vibes', cursive;
+    margin-top: 30px;
+    font-size: 50px;
+    /* ajuste aqui à vontade */
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.rsvp-title {
+    margin-bottom: 24px;
+    margin-top: 0;
+    text-align: center;
+}
+
+
+@media (max-width: 600px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
