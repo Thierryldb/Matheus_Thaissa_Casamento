@@ -396,8 +396,30 @@ h4 {
 }
 
 
-@media (max-width: 600px) {
-    .grid-2 {
-        grid-template-columns: 1fr;
+@media (max-width: 768px) {
+
+    .rsvp-container {
+        padding: 30px 16px;
+    }
+
+    .rsvp-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .logo-top-left {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .logo-top-left img {
+        width: 120px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        font-size: 1rem;
+        padding: 14px;
     }
 }
