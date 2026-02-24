@@ -1,142 +1,579 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+/* =========================
+   RESET BÁSICO
+   ========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/* =========================
+   FONTES
+   ========================= */
+.font-script {
+    font-family: 'Great Vibes', cursive;
+}
 
-    <title>Matheus & Thaíssa — Nosso Casamento</title>
+.font-serif-display {
+    font-family: 'Playfair Display', serif;
+}
 
-    <!-- Tailwind (apenas utilitários de layout) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+.font-body {
+    font-family: 'Lora', serif;
+}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400..900&family=Lora:wght@400..700&display=swap"
-        rel="stylesheet">
+.font-rounded {
+    font-family: 'Quicksand', sans-serif;
+}
 
-    <!-- CSS externo -->
-    <link rel="stylesheet" href="style.css">
-</head>
+/* =========================
+   BODY
+   ========================= */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Lora', serif;
+    background-color: #a047d7;
+    overflow-x: hidden;
+}
 
-<body class="font-body">
+/* =========================
+   ESTRUTURA PRINCIPAL
+   ========================= */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 
-    <audio id="tickTickSound" src="tiktak.mp3" loop></audio>
+/* =========================
+   TEXTOS
+   ========================= */
+p {
+    color: #bf94d9;
+}
 
-    <script>
-        // Função para reproduzir o som
-        function playTick() {
-            const sound = document.getElementById('tickTickSound');
-            sound.play();
-        }
+h1 {
+    color: #a047d7;
+    font-size: 48px;
+    margin: 60px 0 20px;
+}
 
-        // Configura um intervalo para reproduzir o som a cada segundo, por exemplo
-        setInterval(playTick, 1000); // 1000 milissegundos = 1 segundo
-    </script>
+h2 {
+    align-items: center;
+    font-family: 'Great Vibes', cursive;
+    color: #ffffff;
+    font-size: 48px;
+    margin: 60px 0 20px;
+}
 
-    <!-- Logo -->
-    <div class="logo-top-left">
-        <img src="Logo.png" alt="Logo do casamento Matheus e Thaíssa">
-    </div>
+h4 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #ffffff;
+    font-size: 200px;
+}
 
-    <!-- Botões superiores -->
-    <nav class="top-buttons" aria-label="Navegação principal">
-        <a href="presente.html" target="_blank" class="btn-superior">Presentes</a>
-        <a href="confirmacao.html" target="_blank" class="btn-superior">Confirmar presença</a>
-        <a href="local.html" target="_blank" class="btn-superior">Local</a>
-    </nav>
-
-    <!-- Faixa branca superior -->
-    <div class="clean-space top"></div>
-
-    <!-- Hero -->
-    <div class="background-wrapper fade-in">
-        <main class="text-center px-4">
-            <p class="font-serif-display text-2xl md:text-3xl mb-6">
-                Bem-vindo ao nosso casamento
-            </p>
-
-            <h1 class="font-script text-5xl md:text-9xl leading-tight mb-6">
-                Matheus & Thaíssa
-            </h1>
-
-            <a href="confirmacao.html" target="_blank" class="btn-principal inline-block">
-                Confirmar Presença
-            </a>
-        </main>
-    </div>
-
-    <!-- Faixa branca inferior -->
-    <div class="clean-space bottom"></div>
-
-    <!-- Informações -->
-    <section class="info-clean">
-        <div class="info-grid">
-
-            <div class="info-card">
-                <div class="info-icon">
-                    <i data-lucide="calendar"></i>
-                </div>
-                <h3>Data</h3>
-                <p>Sábado, 12 de Abril de 2026</p>
-            </div>
-
-            <div class="info-card">
-                <div class="info-icon">
-                    <i data-lucide="clock"></i>
-                </div>
-                <h3>Horário</h3>
-                <p>Cerimônia às 15:45</p>
-                <p>Recepção em seguida</p>
-            </div>
-
-            <div class="info-card">
-                <div class="info-icon">
-                    <i data-lucide="map-pin"></i>
-                </div>
-                <h3>Local</h3>
-                <p>Espaço Celebrare</p>
-                <p>Rua Luiz Beltrão, 714</p>
-            </div>
-
-        </div>
-    </section>
+.titulo-local {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
 
 
-    <!-- Countdown -->
-    <section class="countdown-section">
-        <h2>Contagem Regressiva</h2>
+.lista-magalu,
+.presente .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        <div class="countdown-container">
-            <div class="count-item">
-                <span id="days">00</span>
-                <small>Dias</small>
-            </div>
-            <div class="count-item">
-                <span id="hours">00</span>
-                <small>Horas</small>
-            </div>
-            <div class="count-item">
-                <span id="minutes">00</span>
-                <small>Min</small>
-            </div>
-            <div class="count-item">
-                <span id="seconds">00</span>
-                <small>Seg</small>
-            </div>
-        </div>
-    </section>
+.conf-color {
+    background-color: #c7aada;
+}
 
-    <!-- Script -->
-    <script src="Cronometro.js" defer></script>
+.input-elegante {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    outline: none;
+}
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+.input-elegante:focus {
+    border-color: #a047d7;
+}
 
-</body>
+/* =========================
+   BOTÕES
+   ========================= */
+.top-buttons {
+    position: fixed;
+    top: 7px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+    z-index: 1000;
+}
 
-</html>
+.btn-superior {
+    background-color: #ffffff;
+    border-radius: 5px;
+    backdrop-filter: blur(4px);
+    color: #54465c;
+    padding: 7px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-superior:hover {
+    color: #a047d7;
+}
+
+.btn-principal {
+    font-size: 23px;
+    padding: 14px;
+    border-radius: 14px;
+    background-color: #ffffff;
+    color: #a047d7;
+    cursor: pointer;
+    border: 2px solid #bf94d9;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #a047d7;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FAIXAS BRANCAS
+   ========================= */
+.clean-space {
+    height: 50px;
+    background-color: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.clean-space.top::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+.clean-space.bottom::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+/* =========================
+   BACKGROUND CENTRAL
+   ========================= */
+.background-wrapper {
+    min-height: calc(100vh - 100px);
+    width: 100%;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1)),
+        url("MT.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================
+   INFO CLEAN (BRANCO)
+   ========================= */
+.info-clean {
+    background-color: #ffffff;
+    padding: 100px 20px;
+}
+
+.info-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    text-align: center;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-icon {
+    width: 75px;
+    height: 75px;
+    background-color: #efe4fb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #191819;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 17px;
+    color: #2f2e2e;
+    margin: 3px 0;
+}
+
+.info-card:hover .info-icon {
+    transform: scale(1.08);
+    transition: 0.3s ease;
+}
+
+.form-container {
+    width: 80vw;
+    height: 700px;
+    /* Altura fixa que você já definiu */
+    max-width: 1200px;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    /* Ajuste o top para descer um pouco mais */
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    /* Mantém o centralizado e aumenta o conteúdo */
+    overflow: hidden;
+    /* Evita rolagem */
+}
+
+.form-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+
+
+
+/* =========================
+   LOGO
+   ========================= */
+.logo-top-left {
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.logo-top-left img {
+    height: 175px;
+    width: auto;
+}
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+.countdown-section {
+    background-color: #a047d7;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.countdown-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.count-item span {
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+}
+
+.count-item small {
+    margin-top: 8px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f3e9fb;
+    display: block;
+}
+
+/* =========================
+   ANIMAÇÕES
+   ========================= */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-icon {
+    width: 94px;
+    height: 94px;
+    background-color: #efe4fb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.info-icon svg {
+    width: 52px;
+    height: 52px;
+    stroke: #a047d7;
+    stroke-width: 1.8;
+}
+
+
+/* Estilo para o container do mapa */
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 1200px;
+    height: 655px;
+    border: 0;
+}
+
+.titulo-local {
+    font-family: 'Great Vibes', cursive;
+    margin-top: 30px;
+    font-size: 50px;
+    /* ajuste aqui à vontade */
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.rsvp-title {
+    margin-bottom: 24px;
+    margin-top: 0;
+    text-align: center;
+}
+
+
+/* =========================
+   AJUSTES MOBILE (Celulares e Tablets)
+   ========================= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .main,
+    .background-wrapper {
+        min-height: 100vh;
+        background-attachment: scroll;
+        padding-top: 80px;
+    }
+
+
+    .logo-top-left {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-top-left img {
+        height: 90px;
+        width: auto;
+    }
+
+    /* --- Dentro do @media (max-width: 768px) --- */
+
+    .top-buttons {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100%;
+
+        /* Layout de Grade para encaixar perfeito */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Duas colunas iguais */
+        gap: 10px;
+        /* Espaço entre os botões */
+
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 0 40px;
+        /* Margem lateral para não colar na borda */
+        box-sizing: border-box;
+    }
+
+    .btn-superior {
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid #ddd;
+        font-size: 14px !important;
+        padding: 10px 0 !important;
+        /* Altura do botão */
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    /* Truque: O 2º botão (Confirmar Presença) é o HTML nº 2. 
+       Vamos fazê-lo pular para a linha de baixo e ocupar tudo. */
+    .btn-superior:nth-child(2) {
+        grid-column: span 2;
+        /* Ocupa as 2 colunas */
+        order: 3;
+        /* Força ele a ser o último visualmente (opcional, se quiser ele embaixo) */
+    }
+
+    /* Se quiser manter a ordem original (Presentes - Confirmar - Local),
+       mas o Confirmar no meio ocupando tudo, use este bloco ABAIXO em vez do acima: */
+
+    /* CONFIGURAÇÃO RECOMENDADA (Botão grande embaixo): */
+    /* Botão 1 (Presentes) */
+    .btn-superior:nth-child(1) {
+        grid-column: 1 / 2;
+        /* Fica na esquerda */
+    }
+
+    /* Botão 3 (Local) */
+    .btn-superior:nth-child(3) {
+        grid-column: 2 / 3;
+        /* Fica na direita */
+        /* Precisamos puxar o 'Local' para cima visualmente se a ordem no HTML for 1,2,3 */
+        grid-row: 1;
+    }
+
+    /* Botão 2 (Confirmar Presença) */
+    .btn-superior:nth-child(2) {
+        grid-column: 1 / -1;
+        /* Ocupa a linha inteira de baixo */
+        grid-row: 2;
+    }
+
+    h1.font-script {
+        font-size: 55px !important;
+        line-height: 1.2;
+        margin-top: 140px;
+    }
+
+    .font-serif-display {
+        font-size: 18px !important;
+    }
+
+    .btn-principal {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .info-clean {
+        padding: 60px 20px;
+    }
+
+    .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .info-card {
+        width: 100%;
+    }
+
+    .form-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 600px;
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+
+    .countdown-section h2 {
+        font-size: 48px;
+    }
+
+    .countdown-container {
+        gap: 15px;
+    }
+
+    .count-item span {
+        font-size: 40px;
+    }
+
+    .count-item small {
+        font-size: 12px;
+    }
+}
