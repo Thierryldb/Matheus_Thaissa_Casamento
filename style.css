@@ -397,70 +397,60 @@ h4 {
 
 
 @media (max-width: 768px) {
-
-    /* --- 1. Ajustes Gerais de Estrutura --- */
-    body {
+   body {
         overflow-x: hidden;
-        /* Impede rolagem lateral indesejada */
     }
 
     .main,
     .background-wrapper {
         min-height: 100vh;
-        /* Garante que o fundo cubra a tela toda */
         background-attachment: scroll;
-        /* Melhora performance no mobile */
         padding-top: 80px;
-        /* Espaço para não ficar atrás do logo */
     }
 
-    /* --- 2. Cabeçalho e Botões --- */
-    /* Centraliza o logo e diminui o tamanho */
+
     .logo-top-left {
         position: absolute;
-        /* Deixa de ser fixo para não atrapalhar a rolagem */
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
-        /* Centraliza horizontalmente */
         width: 100%;
         text-align: center;
     }
 
     .logo-top-left img {
         height: 90px;
-        /* Logo menor */
         width: auto;
     }
 
-    /* Botões: descem para a parte inferior da tela ou ficam abaixo do logo */
     .top-buttons {
-        position: absolute;
-        top: 130px;
-        /* Logo abaixo do logo */
-        left: 0;
-        right: 0;
-        justify-content: center;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
         width: 100%;
+        display: flex;
+        justify-content: center;
         flex-wrap: wrap;
-        /* Permite quebrem linha se a tela for muito pequena */
+        gap: 8px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 
     .btn-superior {
-        font-size: 14px;
-        padding: 8px 12px;
-        background-color: rgba(255, 255, 255, 0.9);
-        /* Mais legível */
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid #ddd;
+        font-size: 13px !important;
+        padding: 8px 10px !important;
+        white-space: nowrap;
+        flex: 0 1 auto;
     }
 
-    /* --- 3. Títulos e Textos (Hero) --- */
-    /* Sobrescreve classes do Tailwind e CSS padrão */
     h1.font-script {
         font-size: 55px !important;
-        /* Reduz de 7xl/9xl para algo legível */
         line-height: 1.2;
         margin-top: 140px;
-        /* Empurra para baixo por causa do menu */
     }
 
     .font-serif-display {
@@ -471,54 +461,40 @@ h4 {
         font-size: 18px;
         padding: 10px 20px;
         width: 80%;
-        /* Botão maior para toque */
         max-width: 300px;
     }
 
-    /* --- 4. Grid de Informações (Data, Hora, Local) --- */
     .info-clean {
         padding: 60px 20px;
     }
 
     .info-grid {
         display: flex;
-        /* Muda de Grid para Flex */
         flex-direction: column;
-        /* Empilha um embaixo do outro */
         gap: 50px;
-        /* Espaço entre os itens */
     }
 
     .info-card {
         width: 100%;
     }
 
-    /* --- 5. Correção Crítica do Formulário/Iframe --- */
-    /* O seu código original tinha position absolute e scale 1.2, 
-       isso quebra totalmente o mobile. Aqui consertamos: */
     .form-container {
         position: relative !important;
         top: auto !important;
         left: auto !important;
         transform: none !important;
-        /* Remove o zoom forçado */
         width: 100% !important;
         height: 600px;
-        /* Altura fixa segura */
         margin: 40px auto;
         padding: 0 10px;
     }
 
-    /* --- 6. Mapa --- */
     .map-container iframe {
         height: 350px;
-        /* Mapa mais baixo no celular */
     }
 
-    /* --- 7. Contagem Regressiva --- */
     .countdown-section h2 {
         font-size: 48px;
-        /* Título menor */
     }
 
     .countdown-container {
@@ -527,7 +503,6 @@ h4 {
 
     .count-item span {
         font-size: 40px;
-        /* Números menores */
     }
 
     .count-item small {
