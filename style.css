@@ -34,6 +34,7 @@ body {
     min-height: 100vh;
     font-family: 'Lora', serif;
     background-color: #a047d7;
+    overflow-x: hidden;
 }
 
 /* =========================
@@ -72,6 +73,22 @@ h4 {
     text-align: center;
     color: #ffffff;
     font-size: 200px;
+}
+
+.titulo-local {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+
+.lista-magalu,
+.presente .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .conf-color {
@@ -245,14 +262,18 @@ h4 {
 
 .form-container {
     width: 80vw;
-    height: 700px; /* Altura fixa que você já definiu */
+    height: 700px;
+    /* Altura fixa que você já definiu */
     max-width: 1200px;
     margin: auto;
     position: absolute;
-    top: 60%; /* Ajuste o top para descer um pouco mais */
+    top: 60%;
+    /* Ajuste o top para descer um pouco mais */
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.2); /* Mantém o centralizado e aumenta o conteúdo */
-    overflow: hidden; /* Evita rolagem */
+    transform: translate(-50%, -50%) scale(1.2);
+    /* Mantém o centralizado e aumenta o conteúdo */
+    overflow: hidden;
+    /* Evita rolagem */
 }
 
 .form-container iframe {
@@ -396,8 +417,12 @@ h4 {
 }
 
 
+/* =========================
+   AJUSTES MOBILE (Celulares e Tablets)
+   ========================= */
 @media (max-width: 768px) {
-   body {
+
+    body {
         overflow-x: hidden;
     }
 
@@ -411,7 +436,7 @@ h4 {
 
     .logo-top-left {
         position: absolute;
-        top: 20px;
+        top: 200px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
@@ -423,28 +448,71 @@ h4 {
         width: auto;
     }
 
+    /* --- Dentro do @media (max-width: 768px) --- */
+
     .top-buttons {
         position: relative !important;
         top: auto !important;
         right: auto !important;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 25px;
+
+        /* Layout de Grade para encaixar perfeito */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Duas colunas iguais */
+        gap: 10px;
+        /* Espaço entre os botões */
+
+        margin-top: 15px;
         margin-bottom: 20px;
-        padding: 0 10px;
+        padding: 0 40px;
+        /* Margem lateral para não colar na borda */
         box-sizing: border-box;
     }
 
     .btn-superior {
         background-color: rgba(255, 255, 255, 0.95);
         border: 1px solid #ddd;
-        font-size: 13px !important;
-        padding: 8px 10px !important;
-        white-space: nowrap;
-        flex: 0 1 auto;
+        font-size: 14px !important;
+        padding: 10px 0 !important;
+        /* Altura do botão */
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    /* Truque: O 2º botão (Confirmar Presença) é o HTML nº 2. 
+       Vamos fazê-lo pular para a linha de baixo e ocupar tudo. */
+    .btn-superior:nth-child(2) {
+        grid-column: span 2;
+        /* Ocupa as 2 colunas */
+        order: 3;
+        /* Força ele a ser o último visualmente (opcional, se quiser ele embaixo) */
+    }
+
+    /* Se quiser manter a ordem original (Presentes - Confirmar - Local),
+       mas o Confirmar no meio ocupando tudo, use este bloco ABAIXO em vez do acima: */
+
+    /* CONFIGURAÇÃO RECOMENDADA (Botão grande embaixo): */
+    /* Botão 1 (Presentes) */
+    .btn-superior:nth-child(1) {
+        grid-column: 1 / 2;
+        /* Fica na esquerda */
+    }
+
+    /* Botão 3 (Local) */
+    .btn-superior:nth-child(3) {
+        grid-column: 2 / 3;
+        /* Fica na direita */
+        /* Precisamos puxar o 'Local' para cima visualmente se a ordem no HTML for 1,2,3 */
+        grid-row: 1;
+    }
+
+    /* Botão 2 (Confirmar Presença) */
+    .btn-superior:nth-child(2) {
+        grid-column: 1 / -1;
+        /* Ocupa a linha inteira de baixo */
+        grid-row: 2;
     }
 
     h1.font-script {
